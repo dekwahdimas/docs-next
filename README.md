@@ -1,6 +1,6 @@
 # Translasi dokumentasi Vue 3
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Repositori berikut berisi translasi dokumentasi bahasa Indonesia Vue 3 (vue-next). Teman - teman dapat berkontibusi dalam repositori berikut. Rencana (Roadmap) translasi bisa dilihat dibawah halaman ini.
@@ -72,6 +72,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://namchee.netlify.app"><img src="https://avatars1.githubusercontent.com/u/32661241?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cristopher</b></sub></a><br /><a href="#translation-Namchee" title="Translation">🌍</a></td>
     <td align="center"><a href="http://website-reza.vercel.app"><img src="https://avatars3.githubusercontent.com/u/9331014?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Reza Z. Ramadan</b></sub></a><br /><a href="#translation-RezaZR" title="Translation">🌍</a></td>
     <td align="center"><a href="http://zaiinhs.me"><img src="https://avatars.githubusercontent.com/u/53314006?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zainal Abidin</b></sub></a><br /><a href="#translation-zaiinhs" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://mufidu.com"><img src="https://avatars.githubusercontent.com/u/70360519?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Mufid Utomo</b></sub></a><br /><a href="#translation-mufidu" title="Translation">🌍</a></td>
   </tr>
 </table>
 
