@@ -50,6 +50,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "mufidu",
+      "name": "Muhammad Mufid Utomo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70360519?v=4",
+      "profile": "http://mufidu.com",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
