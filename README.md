@@ -16,7 +16,7 @@ Untuk tata cara melakukan PR (Pull Request, cara berkontibusi ke dalam repositor
 1. Kloning repositori
 
 ```bash
-git clone git@github.com:vuejs-id/docs-next.git
+git clone git@github.com:vuejs/docs.git
 ```
 
 2. Install dependensi

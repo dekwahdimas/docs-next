@@ -37,4 +37,8 @@ export default {
 
 ## Perubahan pada Vue versi 3.x
 
-Pada Vue versi 3.x, properti `$children` telah dihapus dan tidak didukung lagi. Sebagai gantinya, jika Anda butuh akses pada sebuah komponen turunan, kami menyarankan Anda untuk menggunakan [$refs](/guide/component-template-refs.html#template-refs).
+In 3.x, the `$children` property is removed and no longer supported. Instead, if you need to access a child component instance, we recommend using [$refs](/guide/component-template-refs.html#template-refs).
+
+## Migration Strategy
+
+[Migration build flag: `INSTANCE_CHILDREN`](migration-build.html#compat-configuration)

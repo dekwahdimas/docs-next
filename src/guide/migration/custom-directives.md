@@ -9,7 +9,9 @@ badges:
 
 Fungsi _hook_ pada _directives_ telah berganti nama agar lebih selaras dengan siklus hidup komponen. Berikut merupakan gambaran singkat mengenai apa yang telah berubah:
 
-- API telah berganti nama agar lebih selaras dengan siklus hidup komponen
+Additionally, the `expression` string is no longer passed as part of the `binding` object.
+
+## 2.x Syntax
 
 Lanjutkan membaca untuk penjelasan lebih lanjut.
 
@@ -55,8 +57,9 @@ Namun pada Vue versi 3, kami telah membuat API yang lebih kohesif untuk _custom 
 API akhir akan menjadi seperti berikut:
 
 ```js
-const DirectiveKu = {
-  beforeMount(el, binding, vnode, prevVnode) {},
+const MyDirective = {
+  created(el, binding, vnode, prevVnode) {}, // new
+  beforeMount() {},
   mounted() {},
   beforeUpdate() {}, // baru
   updated() {},
@@ -104,5 +107,9 @@ mounted(el, binding, vnode) {
 ```
 
 :::warning
-Dengan dukungan [fragments](/guide/migration/fragments.html#overview), komponen dapat memiliki lebih dari satu _node_ utama. Ketika digunakan pada komponen yang memiliki lebih dari satu _node_ inti, sebuah _directive_ akan dihiraukan dan sebuah peringatan akan dicatat.
+With [fragments](/guide/migration/fragments.html#overview) support, components can potentially have more than one root node. When applied to a multi-root component, a custom directive will be ignored and a warning will be logged.
 :::
+
+## Migration Strategy
+
+[Migration build flag: `CUSTOM_DIR`](migration-build.html#compat-configuration)

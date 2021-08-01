@@ -2,7 +2,8 @@
 
 Kebutuhan umum untuk _binding_ data adalah memanipulasi daftar elemen _class_ dan _style_ sebarisnya (_inline styles_). Karena keduanya adalah atribut, kita dapat menggunakan `v-bind` untuk menanganinya: kita hanya perlu menghitung string terakhir dengan ekspresi kita. Namun, berurusan dengan penggabungan string mengjengkelkan dan rawan kesalahan. Karena alasan ini, Vue menyediakan penyempurnaan khusus ketika `v-bind` digunakan dengan `class` dan `style`. Selain string, ekspresi juga dapat dievaluasi menjadi objek atau array.
 
-## _Binding_ Kelas HTML
+## Binding HTML Classes
+<VideoLesson href="https://vueschool.io/lessons/dynamic-css-classes-with-vue-3?friend=vuejs" title="Free Vue.js Dynamic Classes Lesson">Watch a free video lesson on Vue School</VideoLesson>
 
 ### Sintaksis Objek
 
@@ -230,7 +231,7 @@ Sintaksis array untuk `:style` memungkinkan Anda menerapkan beberapa objek _styl
 
 ### Memberi Awalan Secara Otomatis
 
-Saat Anda menggunakan properti CSS yang membutuhkan [awalan vendor](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) pada `:style`, misalnya `transform`, Vue akan secara otomatis mendeteksi dan tambahkan prefiks yang sesuai ke _style_ yang diterapkan.
+When you use a CSS property that requires a [vendor prefix](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `:style`, Vue will automatically add the appropriate prefix. Vue does this by checking at runtime to see which style properties are supported in the current browser. If the browser doesn't support a particular property then various prefixed variants will be tested to try to find one that is supported.
 
 ### Beberapa Nilai
 

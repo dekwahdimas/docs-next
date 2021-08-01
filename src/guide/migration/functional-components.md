@@ -115,5 +115,6 @@ Perbedaan utama dari kedua cara penulisan tersebut adalah:
 
 Anda dapat memperoleh informasi lebih lanjut mengenai penggunaan komponen fungsional yang baru dan perubahan pada fungsi _render_ melalui:
 
-- [Migrasi: Fungsi Render](/guide/migration/render-function-api.html)
-- [Panduan: Fungsi Render](/guide/render-function.html)
+- [Migration: Render Functions](/guide/migration/render-function-api.html)
+- [Guide: Render Functions](/guide/render-function.html)
+- [Migration build flag: `COMPONENT_FUNCTIONAL`](migration-build.html#compat-configuration)

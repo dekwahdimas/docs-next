@@ -6,7 +6,8 @@ const sidebar = {
       children: [
         '/cookbook/',
         '/cookbook/editable-svg-icons',
-        '/cookbook/debugging-in-vscode'
+        '/cookbook/debugging-in-vscode',
+        '/cookbook/automatic-global-registration-of-base-components'
       ]
     }
   ],
@@ -105,7 +106,7 @@ const sidebar = {
     {
       title: 'Peningkatan',
       collapsable: false,
-      children: ['/guide/routing', '/guide/state-management', '/guide/ssr']
+      children: ['/guide/routing', '/guide/state-management', '/guide/ssr', '/guide/security']
     },
     {
       title: 'Aksesibilitas',
@@ -171,6 +172,7 @@ const sidebar = {
   ],
   migration: [
     '/guide/migration/introduction',
+    '/guide/migration/migration-build',
     {
       title: 'Detail',
       collapsable: false,
@@ -201,6 +203,7 @@ const sidebar = {
         '/guide/migration/slots-unification',
         '/guide/migration/suspense',
         '/guide/migration/transition',
+        '/guide/migration/transition-as-root',
         '/guide/migration/transition-group',
         '/guide/migration/v-on-native-modifier-removed',
         '/guide/migration/v-model',
@@ -381,7 +384,7 @@ module.exports = {
               },
               {
                 text: 'Devtools',
-                link: 'https://github.com/vuejs/vue-devtools'
+                link: 'https://devtools.vuejs.org'
               },
               {
                 text: 'Berita Mingguan',
@@ -420,11 +423,13 @@ module.exports = {
           // Translation maintainers: Please include the link below to the English documentation
           // {
           //   text: 'English',
-          //   link: 'https://v3.vuejs.org/'
+          //   link: 'https://v3.vuejs.org/',
+          //   isTranslation: true
           // },
           {
             text: '中文',
-            link: 'https://v3.cn.vuejs.org/'
+            link: 'https://v3.cn.vuejs.org/',
+            isTranslation: true
           },
           {
             text: 'Bahasa Inggris',
@@ -432,11 +437,18 @@ module.exports = {
           },
           {
             text: '한국어',
-            link: 'https://v3.ko.vuejs.org/'
+            link: 'https://v3.ko.vuejs.org/',
+            isTranslation: true
           },
           {
             text: '日本語',
-            link: 'https://v3.ja.vuejs.org/'
+            link: 'https://v3.ja.vuejs.org/',
+            isTranslation: true
+          },
+          {
+            text: 'Русский',
+            link: 'https://v3.ru.vuejs.org/ru/',
+            isTranslation: true
           },
           {
             text: 'More Translations',
@@ -445,7 +457,7 @@ module.exports = {
         ]
       }
     ],
-    repo: 'vuejs/docs-next',
+    repo: 'vuejs/docs',
     editLinks: false,
     editLinkText: 'Sunting di GitHub!',
     lastUpdated: 'Pembaruan terakhir',
@@ -472,7 +484,8 @@ module.exports = {
       carbon: 'CEBDT27Y',
       custom: 'CKYD62QM',
       placement: 'vuejsorg'
-    }
+    },
+    topBanner: false
   },
   plugins: [
     [
