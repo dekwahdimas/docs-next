@@ -13,8 +13,8 @@ Perubahan ini merupakan perubahan API internal yang _low-level_ dan tidak berpen
 
 Berikut merupakan gambaran umum tentang perubahan yang terjadi:
 
-- Menghapus konsep internal tentang atribut yang dapat dienumerasi dan memperlakukan atribut tersebut sama seperti atribut bukan _boolean_ biasa
-- **MERUSAK**: Tidak menghapus atribut bila nilainya merupakan `false`, melainkan menetapkannya sebagai `attr=false`. Untuk menghapus atribut, gunakan `null` atau `undefined`.
+- Drop the internal concept of enumerated attributes and treat those attributes the same as normal non-boolean attributes
+- **BREAKING**: No longer removes attribute if the value is boolean `false`. Instead, it's set as attr="false". To remove the attribute, use `null` or `undefined`.
 
 Lanjutkan membaca untuk penjelasan lebih lanjut
 
@@ -34,10 +34,10 @@ Tabel di bawah ini mendeskripsikan perbedaan dalam cara Vue menangani atribut ya
 
 | Ekspersi _binding_  | `foo` <sup>normal</sup> | `draggable` <sup>enumerated</sup> |
 | ------------------- | ----------------------- | --------------------------------- |
-| `:attr="null"`      | /                       | `draggable="false"`               |
-| `:attr="undefined"` | /                       | /                                 |
+| `:attr="null"`      | -                       | `draggable="false"`               |
+| `:attr="undefined"` | -                       | -                                 |
 | `:attr="true"`      | `foo="true"`            | `draggable="true"`                |
-| `:attr="false"`     | /                       | `draggable="false"`               |
+| `:attr="false"`     | -                       | `draggable="false"`               |
 | `:attr="0"`         | `foo="0"`               | `draggable="true"`                |
 | `attr=""`           | `foo=""`                | `draggable="true"`                |
 | `attr="foo"`        | `foo="foo"`             | `draggable="true"`                |
@@ -60,8 +60,8 @@ Tabel di bawah ini mendeskripsikan perilaku baru tersebut:
 
 | Ekspresi _binding_  | `foo` <sup>normal</sup>    | `draggable` <sup>enumerated</sup> |
 | ------------------- | -------------------------- | --------------------------------- |
-| `:attr="null"`      | /                          | / <sup>*</sup>                    |
-| `:attr="undefined"` | /                          | /                                 |
+| `:attr="null"`      | -                          | - <sup>*</sup>                    |
+| `:attr="undefined"` | -                          | -                                 |
 | `:attr="true"`      | `foo="true"`               | `draggable="true"`                |
 | `:attr="false"`     | `foo="false"` <sup>*</sup> | `draggable="false"`               |
 | `:attr="0"`         | `foo="0"`                  | `draggable="0"` <sup>*</sup>      |

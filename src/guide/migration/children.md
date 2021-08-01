@@ -41,4 +41,4 @@ Pada Vue versi 3.x, properti `$children` telah dihapus dan tidak didukung lagi. 
 
 ## Migration Strategy
 
-[_Migration build flag_: `INSTANCE_CHILDREN`](migration-build.html#compat-configuration)
+[Migration build flag: `INSTANCE_CHILDREN`](migration-build.html#compat-configuration)

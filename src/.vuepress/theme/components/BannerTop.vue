@@ -11,10 +11,7 @@
         <img src="/images/vueschool/vs-backpack.png" alt="Backpack">
       </div>
       <div class="vs-slogan">
-        3-months Vue School for only $49 <span style="text-decoration: line-through">$75</span>!
-        <span class="vs-slogan-light">
-          Limited Time Offer
-        </span>
+        Extended! <span class="vs-slogan-light">Last few hours</span> for the Vue School offer
       </div>
       <div class="vs-button">
         GET ACCESS
@@ -58,24 +55,24 @@ $topBannerHeightMobile ?= 3.125rem
         background: #f22606
 
   .vs-iso
-      display: none
-      position: absolute
-      left: 20px
+    display: none
+    position: absolute
+    left: 20px
+    height: 26px
+    img
       height: 26px
+    @media (min-width: 680px)
+      display: inline-block
+      height: 40px
       img
-        height: 26px
-      @media (min-width: 680px)
-        display: inline-block
         height: 40px
-        img
-          height: 40px
-      @media (min-width: 900px)
-        display: none
+    @media (min-width: 900px)
+      display: none
 
   .vs-logo
     position: absolute
     display: none
-    left: 40px
+    left: 20px
     @media (min-width: 900px)
       display: block
 
@@ -85,31 +82,38 @@ $topBannerHeightMobile ?= 3.125rem
 
     .vs-backpack
       margin-right: 6px
+      position: absolute
       @media (min-width: 680px)
-        margin-right: 14px
+        position: static
+        margin-right: 4px
       img
         height: 50px
         @media (min-width: 680px)
+          height: 56px
+        @media (min-width: 900px)
           height: 74px
 
     .vs-slogan
       color: #FFF
       font-weight: bold
       font-size: 14px
-      margin-right: 26px
+      text-align: center
+      padding: 0 90px
       @media (min-width: 680px)
+        padding: 0
+        text-align: left
+        margin-right: 26px
         margin-right: 0
         font-size: 18px
       > .vs-slogan-light
         color: #ff5338
-        display: block
         text-align: left
         @media (min-width: 900px)
           text-align: center
           display: inline
 
     .vs-button
-      margin-left: 43px
+      margin-left: 13px
       color: #FFF
       padding: 13px 24px
       border-radius: 40px
@@ -120,13 +124,13 @@ $topBannerHeightMobile ?= 3.125rem
         display: inline-block
 
   .vs-close
-      right: 10px
-      position: absolute
-      padding: 10px
-      @media (min-width: 680px)
-        right: 20px
-      &:hover
-        color: #56D8FF
+    right: 10px
+    position: absolute
+    padding: 10px
+    @media (min-width: 680px)
+      right: 20px
+    &:hover
+      color: #56D8FF
 
 /************************************/
 
@@ -152,14 +156,12 @@ $topBannerHeightMobile ?= 3.125rem
 
 // Adjust titles margin and padding for anchor links
 .theme-container.has-top-banner
-  {$contentClass}:not(.custom)
-    h1, h2, h3, h4, h5, h6
-      margin-top (0.5rem - $topBannerHeight - $navbarHeight)
-      padding-top ($navbarHeight + $topBannerHeight + 1rem)
-@media (min-width: 680px)
-  .theme-container.has-top-banner
-    {$contentClass}:not(.custom)
-      h1, h2, h3, h4, h5, h6
-        margin-top (0.5rem - $topBannerHeightMobile - $navbarHeight)
-        padding-top ($navbarHeight + $topBannerHeightMobile + 1rem)
+  {$contentClass}:not(.custom) > h1,
+  {$contentClass}:not(.custom) > h2,
+  {$contentClass}:not(.custom) > h3
+    margin-top (0.5rem - $navbarHeight - $topBannerHeightMobile)
+    padding-top ($navbarHeight + 1rem + $topBannerHeightMobile)
+    @media (min-width: 680px)
+      margin-top (0.5rem - $navbarHeight - $topBannerHeight)
+      padding-top ($navbarHeight + 1rem + $topBannerHeight)
 </style>

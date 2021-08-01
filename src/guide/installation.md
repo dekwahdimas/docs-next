@@ -90,15 +90,15 @@ vue upgrade --next
 
 ## Vite
 
-[Vite](https://github.com/vitejs/vite) adalah perangkat pembangunan web yang memungkinkan menyediakan kode secara cepat karena pendekatan modul ES asli.
+[Vite](https://github.com/vitejs/vite) is a web development build tool that allows for lightning fast serving of code due to its native ES Module import approach.
 
 Proyek Vue dapat diatur secara cepat dengan Vite dengan menjalankan perintah berikut di terminal Anda.
 
 Dengan npm:
 
 ```bash
-$ npm init @vitejs/app <nama-proyek>
-$ cd <nama-proyek>
+$ npm init vite <project-name> -- --template vue
+$ cd <project-name>
 $ npm install
 $ npm run dev
 ```
@@ -106,19 +106,13 @@ $ npm run dev
 Atau dengan Yarn:
 
 ```bash
-$ yarn create @vitejs/app <nama-proyek>
-$ cd <nama-proyek>
+$ yarn create vite <project-name> --template vue
+$ cd <project-name>
 $ yarn
 $ yarn dev
 ```
 
-Mungkin terjadi, ketika nama pengguna Anda memiliki spasi di dalamnya seperti 'Mike Baker' yang Vite tidak dapat lakukan. Coba lakukan dengan cara
-
-```bash
-$ create-vite-app <nama-proyek>
-```
-
-## Penjelasan dari Berbagai _Build_
+## Explanation of Different Builds
 
 Di dalam [direktori `dist/` dari paket npm](https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/), Anda dapat menemukan beberapa _build_ berbeda dari Vue.js. Berikut gambaran berkas `dist` yang mana yang harus digunakan berdasarkan studi kasus yang Anda miliki.
 

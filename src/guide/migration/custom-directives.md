@@ -9,7 +9,9 @@ badges:
 
 Fungsi _hook_ pada _directives_ telah berganti nama agar lebih selaras dengan siklus hidup komponen. Berikut merupakan gambaran singkat mengenai apa yang telah berubah:
 
-- API telah berganti nama agar lebih selaras dengan siklus hidup komponen
+Additionally, the `expression` string is no longer passed as part of the `binding` object.
+
+## 2.x Syntax
 
 Lanjutkan membaca untuk penjelasan lebih lanjut.
 

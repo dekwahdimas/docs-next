@@ -11,42 +11,42 @@ _Method_ `$on`, `$off` dan `$once` dihapus. Objek aplikasi tidak perlu lagi untu
 
 ## Sintaks Vue versi 2.x
 
-Pada Vue versi 2.x, objek Vue dapat digunakan untuk memicu _event handler_ yang dipasang secara imperatif melalui API _event emitter_ (`$on`, `$off`, dan `$once`). Hal tersebut dapat digunakan untuk membuat _event hub_ yang dapat membuat _event handler_ global yang dapat digunakan diseluruh bagian pada aplikasi:
+In 2.x, a Vue instance could be used to trigger handlers attached imperatively via the event emitter API (`$on`, `$off` and `$once`). This could be used to create an _event bus_ to create global event listeners used across the whole application:
 
 ```js
-// eventHub.js
+// eventBus.js
 
-const eventHub = new Vue()
+const eventBus = new Vue()
 
-export default eventHub
+export default eventBus
 ```
 
 ```js
-// KomponenAnak.vue
-import eventHub from './eventHub'
+// ChildComponent.vue
+import eventBus from './eventBus'
 
 export default {
   mounted() {
-    // menambahkan _handler_ eventHub
-    eventHub.$on('event-kustom', () => {
-      console.log('Event kustom terjadi!')
+    // adding eventBus listener
+    eventBus.$on('custom-event', () => {
+      console.log('Custom event triggered!')
     })
   },
   beforeDestroy() {
-    // menghapus _handler_ kejadianKustom
-    eventHub.$off('event-kustom')
+    // removing eventBus listener
+    eventBus.$off('custom-event')
   }
 }
 ```
 
 ```js
-// KomponenInduk.vue
-import eventHub from './eventHub'
+// ParentComponent.vue
+import eventBus from './eventBus'
 
 export default {
   methods: {
     callGlobalCustomEvent() {
-      eventHub.$emit('event-kustom') // jika KomponenAnak telah masuk ke dalam DOM, Anda dapat mlihat sebuah pesan pada console.
+      eventBus.$emit('custom-event') // if ChildComponent is mounted, we will have a message in the console
     }
   }
 }
@@ -54,25 +54,42 @@ export default {
 
 ## Pembaruan Vue versi 3.x
 
-Kami menghapus _method_ `$on`, `$off` dan `$once` dari objek Vue sepenuhnya. `$emit` tidak dihapus dan tetap merupakan bagian dari API karena `$emit` digunakan untuk memicu _event handler_ yang dipasang secara deklaratif pada sebuah komponen induk.
+We removed `$on`, `$off` and `$once` methods from the instance completely. `$emit` is still a part of the existing API as it's used to trigger event handlers declaratively attached by a parent component.
 
 ## Strategi Migrasi
 
-Di Vue 3, tidak memungkinkan lagi menggunakan API ini untuk me-_listen_ _event_ komponen yang dihasilkan oleh dirinya sendiri, tidak ada cara migrasi untuk kasus tersebut.
+[Migration build flag: `INSTANCE_EVENT_EMITTER`](migration-build.html#compat-configuration)
 
-Tetapi pola eventHub dapat diganti dengan pustaka eksternal yang mengimplementasi antarmuka _event emitter_, sebagai contoh [mitt](https://github.com/developit/mitt) atau [tiny-emitter](https://github.com/scottcorgan/tiny-emitter).
+In Vue 3, it is no longer possible to use these APIs to listen to a component's own emitted events from within a component. There is no migration path for that use case.
+
+### Root Component Events
+
+Static event listeners can be added to the root component by passing them as props to `createApp`:
+
+```js
+createApp(App, {
+  // Listen for the 'expand' event
+  onExpand() {
+    console.log('expand')
+  }
+})
+```
+
+### Event Bus
+
+The event bus pattern can be replaced by using an external library implementing the event emitter interface, for example [mitt](https://github.com/developit/mitt) or [tiny-emitter](https://github.com/scottcorgan/tiny-emitter).
 
 Contoh:
 
 ```js
-//eventHub.js
+// eventBus.js
 import emitter from 'tiny-emitter/instance'
 
 export default {
   $on: (...args) => emitter.on(...args),
   $once: (...args) => emitter.once(...args),
   $off: (...args) => emitter.off(...args),
-  $emit: (...args) => emitter.emit(...args),
+  $emit: (...args) => emitter.emit(...args)
 }
 ```
 
@@ -82,3 +99,10 @@ Cara tersebut mungkin akan didukung juga pada _build_ kompatibel dari Vue 3.
 
 [_Migration build flag_: `INSTANCE_EVENT_EMITTER`](migration-build.html#compat-configuration)
 
+In most circumstances, using a global event bus for communicating between components is discouraged. While it is often the simplest solution in the short term, it almost invariably proves to be a maintenance headache in the long term. Depending on the circumstances, there are various alternatives to using an event bus:
+
+* [Props](/guide/component-basics.html#passing-data-to-child-components-with-props) and [events](/guide/component-basics.html#listening-to-child-components-events) should be your first choice for parent-child communication. Siblings can communicate via their parent.
+* [Provide and inject](/guide/component-provide-inject.html) allow a component to communicate with its slot contents. This is useful for tightly-coupled components that are always used together.
+* `provide`/`inject` can also be used for long-distance communication between components. It can help to avoid 'prop drilling', where props need to be passed down through many levels of components that don't need those props themselves.
+* Prop drilling can also be avoided by refactoring to use slots. If an interim component doesn't need the props then it might indicate a problem with separation of concerns. Introducing a slot in that component allows the parent to create the content directly, so that props can be passed without the interim component needing to get involved.
+* [Global state management](/guide/state-management.html), such as [Vuex](https://next.vuex.vuejs.org/).

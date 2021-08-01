@@ -115,7 +115,7 @@ Pada Vue versi 2, kami menyarankan untuk mengatasi batasan-batasan tersebut deng
 
 ### Sintaks Vue versi 3.x
 
-Dengan perubahan perilaku dari `is`, kami memperkenalkan sebuah _directive_ baru `v-is` untuk menangani kasus tersebut:
+Dengan diubahnya cara kerja `is`, seubuah prefix `vue:` sekarang wajib digunakan untuk _meresolve_ elemen pada komponen Vue:
 
 ```html
 <table>

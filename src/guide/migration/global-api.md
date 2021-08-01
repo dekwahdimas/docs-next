@@ -85,7 +85,7 @@ Sebuah objek aplikasi merupakan bagian dari API global pada versi sebelumnya. Se
 | Vue.mixin                  | app.mixin                                                                                              |
 | Vue.use                    | app.use ([lihat penjelasan](#a-note-for-plugin-authors))                                               |
 | Vue.prototype              | app.config.globalProperties ([lihat penjelasan](#vue-prototype-replaced-by-config-globalproperties))   |
-| Vue.extend                 | dihapus ([lihat penjelasan](#vue-extend-replaced-by-definecomponent))                                |
+| Vue.extend                 | dihapus ([lihat penjelasan](#vue-extend-removed))                                |
 
 API global lainnya yang tidak mengubah perilaku Vue secara global telah dipindahkan menjadi _named export_, seperti yang tertera pada [Treeshaking API Global](./global-api-treeshaking.html).
 
@@ -95,7 +95,9 @@ Pada Vue versi 3.x, saran "gunakan produksi build" hanya akan muncul apabila And
 
 Untuk kode Vue yang memanfaatkan modul ES, karena kode tersebut digunakan dengan _bundler_, dan karena kebanyakan sebuah CLI atau _boilerplate_ telah mengatur variabel produksi dengan benar, saran tersebut tidak akan muncul kembali.
 
-### `config.ignoredElements` Sekarang Menjadi `config.compilerOptions.isCustomElement`
+[Migration build flag: `CONFIG_PRODUCTION_TIP`](migration-build.html#compat-configuration)
+
+### `config.ignoredElements` Is Now `config.compilerOptions.isCustomElement`
 
 Opsi ini diperkenalkan dengan tujuan untuk menyediakan dukungan pada elemen kustom bawaan, sehingga perubahan nama yang dilakukan lebih mencerminkan kegunaan dari opsi ini. Opsi yang baru juga mampu menerima sebuah fungsi sehingga lebih fleksibel dibandingkan cara lama yang hanya menerima string atau RegExp:
 

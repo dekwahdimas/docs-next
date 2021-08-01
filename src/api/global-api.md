@@ -63,6 +63,8 @@ const app = createApp(
 </div>
 ```
 
+The root props are raw props, much like those passed to [`h`](#h) to create a VNode. In addition to component props, they can also include attributes and event listeners to be applied to the root component.
+
 ### Typing
 
 ```ts
@@ -200,7 +202,7 @@ import { defineAsyncComponent } from 'vue'
 
 const AsyncComp = defineAsyncComponent({
   // The factory function
-  loader: () => import('./Foo.vue')
+  loader: () => import('./Foo.vue'),
   // A component to use while the async component is loading
   loadingComponent: LoadingComponent,
   // A component to use if the load fails
