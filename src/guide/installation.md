@@ -17,7 +17,9 @@ Catatan rilis yang detail untuk setiap versi terdapat pada [GitHub](https://gith
 
 ## Vue Devtools
 
-> Saat ini pada tahap Beta - Integrasi VueX dan Router masih dalam proses pengerjaan
+> Currently in Beta - Vuex and Router integration is still WIP
+
+<VideoLesson href="https://vueschool.io/lessons/using-vue-dev-tools-with-vuejs-3?friend=vuejs" title="Learn how to install Vue Devtools on Vue School">Learn how to install and use Vue Devtools in a free Vue School lesson</VideoLesson>
 
 Ketika menggunakan Vue, kami merekomendasikan juga untuk memasang [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) pada peramban Anda, yang memungkinkan Anda untuk menginspeksi dan mendebug aplikasi Vue dengan antarmuka yang lebih ramah pengguna.
 
@@ -45,12 +47,24 @@ The files can be browsed and downloaded from a CDN such as [unpkg](https://unpkg
 
 ## npm
 
-npm adalah metode pemasangan yang direkomendasikan ketika membangun aplikasi skala besar dengan Vue. npm berpasangan dengan baik dengan _bundler_ modul seperti [Webpack](https://webpack.js.org/) atau [Rollup](https://rollupjs.org/). Vue juga menyediakan peralatan pendukung untuk membuat [Komponen Berkas Tunggal](../guide/single-file-component.html).
+npm is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as [webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/).
 
 ```bash
 # versi stabil terakhir
 $ npm install vue@next
 ```
+
+Vue also provides accompanying tools for authoring [Single File Components](../guide/single-file-component.html) (SFCs). If you want to use SFCs then you'll also need to install `@vue/compiler-sfc`:
+
+```bash
+$ npm install -D @vue/compiler-sfc
+```
+
+If you're coming from Vue 2 then note that `@vue/compiler-sfc` replaces `vue-template-compiler`.
+
+In addition to `@vue/compiler-sfc`, you'll also need a suitable SFC loader or plugin for your chosen bundler. See the [SFC documentation](../guide/single-file-component.html) for more information.
+
+In most cases, the preferred way to create a webpack build with minimal configuration is to use Vue CLI.
 
 ## CLI
 
@@ -76,15 +90,15 @@ vue upgrade --next
 
 ## Vite
 
-[Vite](https://github.com/vitejs/vite) adalah perangkat pembangunan web yang memungkinkan menyediakan kode secara cepat karena pendekatan modul ES asli.
+[Vite](https://github.com/vitejs/vite) is a web development build tool that allows for lightning fast serving of code due to its native ES Module import approach.
 
 Proyek Vue dapat diatur secara cepat dengan Vite dengan menjalankan perintah berikut di terminal Anda.
 
 Dengan npm:
 
 ```bash
-$ npm init @vitejs/app <nama-proyek>
-$ cd <nama-proyek>
+$ npm init vite <project-name> -- --template vue
+$ cd <project-name>
 $ npm install
 $ npm run dev
 ```
@@ -92,19 +106,13 @@ $ npm run dev
 Atau dengan Yarn:
 
 ```bash
-$ yarn create @vitejs/app <nama-proyek>
-$ cd <nama-proyek>
+$ yarn create vite <project-name> --template vue
+$ cd <project-name>
 $ yarn
 $ yarn dev
 ```
 
-Mungkin terjadi, ketika nama pengguna Anda memiliki spasi di dalamnya seperti 'Mike Baker' yang Vite tidak dapat lakukan. Coba lakukan dengan cara
-
-```bash
-$ create-vite-app <nama-proyek>
-```
-
-## Penjelasan dari Berbagai _Build_
+## Explanation of Different Builds
 
 Di dalam [direktori `dist/` dari paket npm](https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/), Anda dapat menemukan beberapa _build_ berbeda dari Vue.js. Berikut gambaran berkas `dist` yang mana yang harus digunakan berdasarkan studi kasus yang Anda miliki.
 
