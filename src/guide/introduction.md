@@ -314,15 +314,11 @@ Dalam aplikasi berskala besar, sangat penting untuk membagi seluruh aplikasi men
 
 ### Hubungan dengan Elemen Kustom
 
-Anda mungkin telah menyadari bahwa komponen Vue sangat mirip dengan **ELemen Kustom**, yang mana adalah bagian dari [Spesifikasi _Web Components_](https://www.w3.org/wiki/WebComponents/). Hal tersebut karena sintaks komponen Vue sangatlah fleksibel. Sebagai contoh, komponen Vue menerapkan [Slot API](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) dan `is` merupakan atribut spesial. Bagaimanapun, terdapat beberapa perbedaan:
+You may have noticed that Vue components look similar to **Custom Elements**, which are part of the [Web Components Spec](https://www.w3.org/wiki/WebComponents/). Indeed, parts of Vue's component design (for example the slot API) were influenced by the spec before it was natively implemented in browsers.
 
-1. Spesifikasi _Web Components_ sudah final tetapi belum tersedia di semua peramban (_browser_) secara _native_. Safari 10.1+, Chrome 54+ dan Firefox 63+ sudah mendukung _web components_ secara _native_. Jika dibandingkan, komponen Vue berjalan secara konsisten di semua peramban (_browser_) yang didukung (kecuali Internet Explorer 11 - cek detailnya [disini](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0038-vue3-ie11-support.md). Ketika dibutuhkan, komponen Vue juga dapat dibungkus ke dalam kustom elemen _native_.
+The main difference is that Vue's component model is designed as a part of a coherent framework that provides many additional features necessary for building non-trivial applications, for example reactive templating and state management - both of which the spec does not cover.
 
-[//]: # 'TODO: tambahkan pranala ke _build_ versi kompatibilitas'
-
-2. Komponen Vue menyediakan fitur penting yang tidak dimiliki oleh elemen kustom murni, terutama pada aliran data lintas komponen, komunikasi _event_ kustom dan integrasi _build tool_.
-
-Meskipun Vue tidak menggunakan elemen kustom secara internal, Vue memiliki [interoperabilitas yang sangat baik](https://custom-elements-everywhere.com/#vue) dalam hal mengonsumsi dan mendistribusikan sebagai elemen kustom. Vue CLI juga mendukung komponen Vue yang mendaftarkan dirinya sendiri sebagai elemen kustom secara _native_.
+Vue also provides great support for both consuming and creating custom elements. For more details, check out the [Vue and Web Components](/guide/web-components.html) section.
 
 ## Siap untuk Belajar Lebih Lanjut?
 
