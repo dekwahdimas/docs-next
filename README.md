@@ -3,26 +3,28 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Repositori berikut berisi translasi dokumentasi bahasa Indonesia Vue 3 (vue-next). Teman - teman dapat berkontibusi dalam repositori berikut. Rencana (Roadmap) translasi bisa dilihat dibawah halaman ini.
+Repositori berikut berisi translasi dokumentasi Vue 3 (vue-next) ke dalam Bahasa Indonesia. Anda dapat ikut berkontribusi dengan cara memperhatikan [Roadmap](https://github.com/vuejs-id/docs-next/projects/1) dan [Tata Cara Berkontribusi](https://github.com/vuejs-id/docs-next#tata-cara-berkontibusi).
 
-Situs dokumentasi Vue 3 berbahasa Inggris bisa diakses [disini](https://v3.vuejs.org/) untuk situs translasi bisa diakses [disini](https://v3-vuejsid-docs.netlify.app/)
+Adapun situs dokumentasi Vue 3 dapat diakses pada tautan di bawah ini:
+- [Bahasa Inggris](https://v3.vuejs.org/)
+- [Bahasa Indonesia](https://v3-vuejsid-docs.netlify.app/)
 
-## Tata cara berkontibusi
+## Tata Cara Berkontribusi
 
-Untuk tata cara melakukan PR (Pull Request, cara berkontibusi ke dalam repositori) kita mengacu pada [komentar github berikut](https://github.com/mazipan/buku-saku-pramuka/pull/52#issuecomment-710839756) yang mana kita akan detailkan [disini untuk tata cara translasi dan menulis dokumentasi](https://v3.vuejs.org/guide/writing-guide.html), halaman tersebut sudah di translasi dan akan ada pengubahan beberapa kalimat / aturan.
+Direct ke CONTRIBUTING.md
 
 ## Pengembangan Situs
 
 1. Kloning repositori
 
 ```bash
-git clone git@github.com:vuejs/docs.git
+git clone https://github.com/vuejs-id/docs-next.git
 ```
 
 2. Install dependensi
 
 ```bash
-yarn # or npm install
+yarn # atau npm install
 # proyek memakai yarn 1.x
 ```
 
@@ -32,15 +34,15 @@ yarn # or npm install
 yarn serve # or npm run serve
 ```
 
-Proyek ini memerlukan Node.js 12+
+Proyek ini memerlukan versi Node.js 12+
 
-## Deployment
+## *Deployment*
 
 Situs akan otomatis diperbaharui saat ada _commit_ baru pada branch `indonesian`, melalui [Netlify](https://www.netlify.com/). Akun Netlify dimiliki oleh [@mandaputtra](https://github.com/mandaputtra).
 
 ## FAQ
 
-### Kamus Perbendaharaan Istilah
+### Kamus Perbendaharaan Istilah (Glosarium)
 
 Silakan lihat di halaman [Kamus Perbendaharaan Istilah](https://github.com/vuejs-id/docs/blob/master/GLOSARIUM.md) atau [Glosarium Frontend Indonesia](https://github.com/frontend-id/glosarium)
 
