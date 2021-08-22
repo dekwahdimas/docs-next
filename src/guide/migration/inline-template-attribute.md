@@ -5,7 +5,7 @@ badges:
 
 # Atribut Templat Inline <MigrationBadges :badges="$frontmatter.badges" />
 
-## Gambaran Umum
+## Overview
 
 Dukungan untuk [fitur inline-template](https://vuejs.org/v2/guide/components-edge-cases.html#Inline-Templates) telah dihapuskan.
 
