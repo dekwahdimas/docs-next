@@ -1,14 +1,14 @@
-# Introduction
+# Perkenalan
 
 ::: info
-New to Vue.js? Check out our [Essentials Guide](/guide/introduction.html) to get started.
+Baru dalam Vue.js? Kunjungi [Panduan Esensial](/guide/introduction.html) kami untuk memulai.
 :::
 
-This guide is primarily for users with prior Vue 2 experience who want to learn about the new features and changes in Vue 3. **This is not something you have to read from top to bottom before trying out Vue 3.** While it looks like a lot has changed, a lot of what you know and love about Vue is still the same; but we wanted to be as thorough as possible and provide detailed explanations and examples for every documented change.
+Panduan ini ditujukan untuk pengguna yang telah memiliki pengalaman Vue 2 sebelumnya. Kepada orang yang belajar tentang fitur baru dan perubahan di Vue 3. **Berikut ini bukan sesuatu yang harus Anda baca dari atas hingga bawah sebelum mencoba Vue 3.** Sementara terlihat banyak sekali perubahan, apa yang Anda ketahui dan cinta terhadap Vue tetaplah sama; tetapi kami ingin mengungkapkan secara seksama dan memberikan penjelasan secara mendetail dan contoh-contoh untuk setiap perubahan dokumen.
 
 - [Quickstart](#quickstart)
-- [Migration Build](#migration-build)
-- [Notable New Features](#notable-new-features)
+- [Build Migrasi](#migration-build)
+- [Fitur baru penting](#notable-new-features)
 - [Breaking Changes](#breaking-changes)
 - [Supporting Libraries](#supporting-libraries)
 
@@ -17,7 +17,7 @@ This guide is primarily for users with prior Vue 2 experience who want to learn 
 <br>
 <iframe src="https://player.vimeo.com/video/440868720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-Start learning Vue 3 at [Vue Mastery](https://www.vuemastery.com/courses-path/vue3).
+Mulai belajar Vue 3 di [Vue Mastery](https://www.vuemastery.com/courses-path/vue3).
 
 ## Quickstart
 
