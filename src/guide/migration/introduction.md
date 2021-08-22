@@ -8,11 +8,11 @@ Panduan ini ditujukan untuk pengguna yang telah memiliki pengalaman Vue 2 sebelu
 
 - [Quickstart](#quickstart)
 - [Build Migrasi](#migration-build)
-- [Fitur baru penting](#notable-new-features)
-- [Breaking Changes](#breaking-changes)
-- [Supporting Libraries](#supporting-libraries)
+- [Fitur baru yang penting](#notable-new-features)
+- [Perubahan terkini](#breaking-changes)
+- [Pustaka yang mendukung](#supporting-libraries)
 
-## Overview
+## Gambaran Umum
 
 <br>
 <iframe src="https://player.vimeo.com/video/440868720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -21,18 +21,18 @@ Mulai belajar Vue 3 di [Vue Mastery](https://www.vuemastery.com/courses-path/vue
 
 ## Quickstart
 
-If you want to quickly try out Vue 3 in a new project:
+Jika Anda ingin mencoba Vue 3 dengan cepat di sebuah proyek baru:
 
-- Via CDN: `<script src="https://unpkg.com/vue@next"></script>`
-- In-browser playground on [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
-- In-browser Sandbox on [CodeSandbox](https://v3.vue.new)
-- Scaffold via [Vite](https://github.com/vitejs/vite):
+- Melalui CDN: `<script src="https://unpkg.com/vue@next"></script>`
+- In-browser playground di [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
+- In-browser Sandbox di [CodeSandbox](https://v3.vue.new)
+- Scaffold melalui [Vite](https://github.com/vitejs/vite):
 
   ```bash
   npm init vite hello-vue3 -- --template vue # OR yarn create vite hello-vue3 --template vue
   ```
 
-- Scaffold via [vue-cli](https://cli.vuejs.org/):
+- Scaffold melalui [vue-cli](https://cli.vuejs.org/):
 
   ```bash
   npm install -g @vue/cli # OR yarn global add @vue/cli
@@ -40,13 +40,13 @@ If you want to quickly try out Vue 3 in a new project:
   # select vue 3 preset
   ```
 
-## Migration Build
+## Build Migrasi
 
-If you have an existing Vue 2 project or library that you intend to upgrade to Vue 3, we provide a build of Vue 3 that offers Vue 2 compatible APIs. Check out the [Migration Build](./migration-build.html) page for more details.
+Jika Anda sudah mempunyai proyek Vue 2 atau pustaka yang ingin Anda tingkatkan ke versi Vue 3, kami menyediakan sebuah build dari Vue 3 beserta Vue 2 APIs yang kompatibel. Kunjungi halaman [Migrasi Build](./migration-build.html) untuk detail lebih lanjut.
 
-## Notable New Features
+## Fitur Baru yang Penting
 
-Some of the new features to keep an eye on in Vue 3 include:
+Beberapa fitur baru yang akan membuat Anda tertarik di Vue 3 termasuk:
 
 - [Composition API](/guide/composition-api-introduction.html)
 - [Teleport](/guide/teleport.html)
@@ -58,58 +58,58 @@ Some of the new features to keep an eye on in Vue 3 include:
 - [SFC `<style scoped>` can now include global rules or rules that target only slotted content](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0023-scoped-styles-changes.md)
 - [Suspense](/guide/migration/suspense.html) <Badge text="experimental" type="warning" />
 
-## Breaking Changes
+## Perubahan Terkini
 
-The following consists a list of breaking changes from 2.x:
+Berikut ini adalah daftar perubahan terkini dari 2.x:
 
 ### Global API
 
-- [Global Vue API is changed to use an application instance](/guide/migration/global-api.html)
-- [Global and internal APIs have been restructured to be tree-shakable](/guide/migration/global-api-treeshaking.html)
+- [Global Vue API diubah agar menggunakan sebuah instansi aplikasi](/guide/migration/global-api.html)
+- [Global dan APIs Internal telah direkontruksi ulang sebagai tree-shakable](/guide/migration/global-api-treeshaking.html)
 
-### Template Directives
+### Pengarahan Templat
 
-- [`v-model` usage on components has been reworked, replacing `v-bind.sync`](/guide/migration/v-model.html)
-- [`key` usage on `<template v-for>` and non-`v-for` nodes has changed](/guide/migration/key-attribute.html)
-- [`v-if` and `v-for` precedence when used on the same element has changed](/guide/migration/v-if-v-for.html)
-- [`v-bind="object"` is now order-sensitive](/guide/migration/v-bind.html)
-- [`v-on:event.native` modifier has been removed](./v-on-native-modifier-removed.md)
-- [`ref` inside `v-for` no longer register an array of refs](/guide/migration/array-refs.html)
+- [Penggunaan `v-model` dalam komponen telah dikerjakan ulang, menggantikan `v-bind.sync`](/guide/migration/v-model.html)
+- [Penggunaan `key` dalam simpul `<template v-for>` dan bukan-`v-for` telah diubah](/guide/migration/key-attribute.html)
+- [Pendahuluan `v-if` dan `v-for` ketika digunakan dalam elemen yang sama telah diubah](/guide/migration/v-if-v-for.html)
+- [`v-bind="object"` sekarang order-sensitive](/guide/migration/v-bind.html)
+- [`v-on:event.native` modifier telah dihapus](./v-on-native-modifier-removed.md)
+- [`ref` dalam `v-for` tidak lagi terdaftar sebagai array dari refs](/guide/migration/array-refs.html)
 
-### Components
+### Komponen
 
-- [Functional components can only be created using a plain function](/guide/migration/functional-components.html)
-- [`functional` attribute on single-file component (SFC) `<template>` and `functional` component option are deprecated](/guide/migration/functional-components.html)
-- [Async components now require `defineAsyncComponent` method to be created](/guide/migration/async-components.html)
-- [Component events should now be declared with the `emits` option](./emits-option.md)
+- [Functional components hanya dapat dibuat menggunakan plain function](/guide/migration/functional-components.html)
+- [Atribut `functional` dalam komponen single-file (SFC) `<template>` dan opsi `functional` komponen telah usang](/guide/migration/functional-components.html)
+- [Komponen async sekarang memerlukan metode `defineAsyncComponent` agar dapat dibuat](/guide/migration/async-components.html)
+- [Komponen events harus dideklarasikan dengan opsi `emits`](./emits-option.md)
 
 ### Render Function
 
-- [Render function API changed](/guide/migration/render-function-api.html)
-- [`$scopedSlots` property is removed and all slots are exposed via `$slots` as functions](/guide/migration/slots-unification.html)
-- [`$listeners` has been removed / merged into `$attrs`](./listeners-removed)
-- [`$attrs` now includes `class` and `style` attributes](./attrs-includes-class-style.md)
+- [Render function API diubah](/guide/migration/render-function-api.html)
+- [Properti `$scopedSlots` dihapus dan semua slots terekpos melalui `$slots` sebagai functions](/guide/migration/slots-unification.html)
+- [`$listeners` telah dihapus / digabung dengan `$attrs`](./listeners-removed)
+- [`$attrs` sekarang termasuk atribut `class` dan `style`](./attrs-includes-class-style.md)
 
-### Custom Elements
+### Elemen Kustom
 
-- [Custom element checks are now performed during template compilation](/guide/migration/custom-elements-interop.html)
-- [Special `is` prop usage is restricted to the reserved `<component>` tag only](/guide/migration/custom-elements-interop.html#customized-built-in-elements)
+- [Mengecek elemen kustom sekarang dilakukan saat kompilasi templat](/guide/migration/custom-elements-interop.html)
+- [Penggunaan spesial `is` prop dibatasi hanya dapat dipesan oleh `<component>` tag](/guide/migration/custom-elements-interop.html#customized-built-in-elements)
 
-### Other Minor Changes
+### Beberapa Perubahan Lain
 
-- The `destroyed` lifecycle option has been renamed to `unmounted`
-- The `beforeDestroy` lifecycle option has been renamed to `beforeUnmount`
-- [Props `default` factory function no longer has access to `this` context](/guide/migration/props-default-this.html)
-- [Custom directive API changed to align with component lifecycle and `binding.expression` removed](/guide/migration/custom-directives.html)
-- [The `data` option should always be declared as a function](/guide/migration/data-option.html)
-- [The `data` option from mixins is now merged shallowly](/guide/migration/data-option.html#mixin-merge-behavior-change)
-- [Attributes coercion strategy changed](/guide/migration/attribute-coercion.html)
-- [Some transition classes got a rename](/guide/migration/transition.html)
-- [`<TransitionGroup>` now renders no wrapper element by default](/guide/migration/transition-group.html)
-- [When watching an array, the callback will only trigger when the array is replaced. If you need to trigger on mutation, the `deep` option must be specified.](/guide/migration/watch.html)
-- `<template>` tags with no special directives (`v-if/else-if/else`, `v-for`, or `v-slot`) are now treated as plain elements and will result in a native `<template>` element instead of rendering its inner content.
-- [Mounted application does not replace the element it's mounted to](/guide/migration/mount-changes.html)
-- [Lifecycle `hook:` events prefix changed to `vnode-`](/guide/migration/vnode-lifecycle-events.html)
+- Opsi siklus hidup `destroyed` diubah nama menjadi `unmounted`
+- Opsi siklus hidup `beforeDestroy` diubah nama menjadi `beforeUnmount`
+- [Props `default` factory function tidak lagi mengakses ke konteks `this`](/guide/migration/props-default-this.html)
+- [API pengarahan kustom diubah untuk sejajar dengan siklus hidup komponen dan `binding.expression` dihapus](/guide/migration/custom-directives.html)
+- [Opsi `data` harus selalu  dideklarasikan sebagai function](/guide/migration/data-option.html)
+- [Opsi `data` dari mixins sekarang digabung secara dangkal](/guide/migration/data-option.html#mixin-merge-behavior-change)
+- [Strategi pemaksaan atribut diubah](/guide/migration/attribute-coercion.html)
+- [Beberapa kelas transition berubah nama](/guide/migration/transition.html)
+- [`<TransitionGroup>` sekarang renders elemen tanpa wrapper secara default](/guide/migration/transition-group.html)
+- [Ketika melihat sebuah array, callback akan hanya terpicu ketika array digantikan. Jika Anda ingin memicu ketika mutasi, opsi `deep` harus dispesifikkan.](/guide/migration/watch.html)
+- `<template>` tags tanpa pengarahan spesial (`v-if/else-if/else`, `v-for`, atau `v-slot`) sekarang diperlakukan sebagai elemen polos dan akan mengakibatkan pada sebuah elemen native `<template>` daripada me-render konten didalamnya.
+- [Aplikasi yang terpasang tidak mengubah elemen yang dipasangkan](/guide/migration/mount-changes.html)
+- [Siklus hidup event dengan awalan `hook:` berubah menjadi `vnode-`](/guide/migration/vnode-lifecycle-events.html)
 
 ### Removed APIs
 
