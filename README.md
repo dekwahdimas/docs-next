@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Repositori berikut berisi translasi dokumentasi Vue 3 (vue-next) ke dalam Bahasa Indonesia. Anda dapat ikut berkontribusi dengan cara memperhatikan [Roadmap](https://github.com/vuejs-id/docs-next/projects/1) dan [Tata Cara Berkontribusi](https://github.com/vuejs-id/docs-next#tata-cara-berkontibusi).
+_Repository_ berikut berisi terjemahan dokumentasi Vue 3 (vue-next) ke dalam Bahasa Indonesia. Anda dapat ikut berkontribusi dengan cara memperhatikan [Roadmap](https://github.com/vuejs-id/docs-next/projects/1) dan [Tata Cara Berkontribusi](https://github.com/vuejs-id/docs-next#tata-cara-berkontibusi).
 
 Adapun situs dokumentasi Vue 3 dapat diakses pada tautan di bawah ini:
 - [Bahasa Inggris](https://v3.vuejs.org/)
@@ -11,17 +11,17 @@ Adapun situs dokumentasi Vue 3 dapat diakses pada tautan di bawah ini:
 
 ## Tata Cara Berkontribusi
 
-Direct ke CONTRIBUTING.md
+Perhatikan Tata Cara Berkontribusi kami dijabarkan ke .....
 
 ## Pengembangan Situs
 
-1. Kloning repositori
+1. _Clone repository_
 
 ```bash
 git clone https://github.com/vuejs-id/docs-next.git
 ```
 
-2. Install dependensi
+2. Instalasi _dependencies_
 
 ```bash
 yarn # atau npm install
@@ -34,35 +34,41 @@ yarn # atau npm install
 yarn serve # or npm run serve
 ```
 
-Proyek ini memerlukan versi Node.js 12+
+Situs kemudian dapat diakses pada browser Anda melalui [http://localhost:8080/](http://localhost:8080/).
+
+Proyek ini memerlukan versi Node.js 12+.
 
 ## *Deployment*
 
-Situs akan otomatis diperbaharui saat ada _commit_ baru pada branch `indonesian`, melalui [Netlify](https://www.netlify.com/). Akun Netlify dimiliki oleh [@mandaputtra](https://github.com/mandaputtra).
+Melalui Netlify, situs akan diperbarui secara otomatis ketika _commit_ baru di-_push_ ke _branch_ `indonesian`. Akun Netlify dipegang dan dikelola oleh [@mandaputtra](https://github.com/mandaputtra).
 
 ## FAQ
 
-### Kamus Perbendaharaan Istilah (Glosarium)
+### Glosarium
 
-Silakan lihat di halaman [Kamus Perbendaharaan Istilah](https://github.com/vuejs-id/docs/blob/master/GLOSARIUM.md) atau [Glosarium Frontend Indonesia](https://github.com/frontend-id/glosarium)
+Glosarium dibuat untuk memudahkan kontributor dalam menerjemahkan kata-kata yang sering muncul pada dokumentasi resmi Vue.js. Glosarium dapat dilihat pada tautan berikut.
+- [Glosarium Vuejs-id](https://github.com/vuejs-id/docs/blob/master/GLOSARIUM.md)
+- [Glosarium Frontend Indonesia](https://github.com/frontend-id/glosarium)
 
-### Bagaimana repo ini bisa sinkron dengan repo _upstream_?
+### Bagaimana Menyinkronkan _Repository_ Vuejs-id dengan _Repository Upstream_ Vuejs
 
-Kita menggunakan bot [wei/pull](https://github.com/wei/pull) dengan konfigurasi bisa dibaca [disini](https://github.com/vuejs-id/docs-next/blob/indonesian/.github/pull.yml). Kita tetap menyimpan dan mensinkronasi repo _upstream_ pada _branch master_ yang pada nantinya bisa digunakan sebagai referensi jika bot _wei/pull_ mengalami _merge conflict_ pada saat PR ke _branch indonesian_.
+Vuejs-id menggunakan bot _[wei/pull]_(https://github.com/wei/pull) dengan konfigurasi yang dapat dibaca di [sini](https://github.com/vuejs-id/docs-next/blob/indonesian/.github/pull.yml). 
 
-Jikalau ada masukan soal cara sinkronasi ini, kita dengan senang hati akan mengubahnya apabila solusi tersebut lebih baik.
+Bot _wei/pull_ memungkinkan Vuejs-id untuk menyimpan dan menyinkronkan _repository upstream_ pada _branch master_. _Branch_ ini dapat menjadi referensi jika bot _wei/pull_ mengalami _merge conflict_ pada saat melakukan _merge_ PR ke _branch indonesian_.
 
-### Apakah contoh kode diterjemahkan juga?
+Vuejs-id menerima saran dan masukan apabila terdapat solusi yang lebih baik mengenai sistem sinkronisasi kami.
+
+### Apakah contoh kode perlu diterjemahkan?
 
 Tidak, karena:
 
-- Terdapat beberapa contoh kode yang memiliki demo interaktif menggunakan CodePen. Jika contoh kode ikut diterjemahkan, hal tersebut akan menambah waktu pembaca untuk memahami contoh kode yang ada pada dokumentasi dengan yang ada pada CodePen. Terkecuali jika kita bisa menyediakan CodePen tersendiri untuk masing-masing demo interaktif.
-- Beberapa hasil translasi dokumentasi Vue.js berbahasa lain tidak mengubah kode menggunakan bahasa mereka sendiri khususnya pada penamaan variabel.
-- Pengecualian untuk komentar pada contoh kode. Karena komentar tersebut juga merupakan penjelasan tentang bagian tertentu pada contoh kode.
+- Terdapat beberapa contoh kode yang memiliki demo interaktif menggunakan CodePen. Jika contoh kode diterjemahkan, maka pembaca membutuhkan lebih banyak waktu untuk memahami contoh kode pada dokumentasi dengan contoh kode pada CodePen. Terkecuali jika kontributor dan Vuejs-id dapat menyediakan CodePen tersendiri untuk masing-masing demo interaktif.
+- Beberapa hasil terjemahan dokumentasi Vue.js selain Bahasa Indonesia tidak menerjemahkan contoh kode, khususnya pada bagian penamaan variabel.
+- Pengecualian untuk komentar pada contoh kode karena dapat menjelaskan bagian-bagian tertentu.
 
-## Contributors ✨
+## Para Kontributor ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Terima kasih untuk kontribusi yang telah diberikan oleh para kontributor berikut ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
