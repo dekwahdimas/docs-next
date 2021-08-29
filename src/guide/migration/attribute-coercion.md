@@ -85,7 +85,7 @@ Penghapusan konsep atribut yang dapat dienumerasi dan `attr="false"` dapat mengh
 | `draggable`          | `draggable` &rarr; `false`           |
 | `spellcheck`         | `spellcheck` &rarr; `true`           |
 
-Supaya perilaku lama tetap dapat dijalankan, dan karena Anda akan menngubah nilai `false` menjadi `'false'`, pada Vue versi 3.x pengembang harus membuat ekspresi `v-bind` pada atribut `contenteditable` dan `spellcheck` agar menghasilkan nilai `false` atau `'false'`.
+Since we no longer coerce `null` to `'false'` for “enumerated properties” in 3.x, in the case of `contenteditable` and `spellcheck`, developers will need to change those `v-bind` expressions that used to resolve to `null` to resolve to `false` or `'false'` in order to maintain the same behavior as 2.x.
 
 Pada Vue versi 2.x, nilai yang tidak valid diubah menjadi `'true'` untuk atribut yang dapat dienumerasi. Perilaku tersebut biasanya tidak diharapkan dan tidak diinginkan pada kasus skala besar. Pada Vue versi 3.x `true` atau `'true'` harus dinyatakan secara eksplisit.
 
@@ -106,8 +106,8 @@ Pada Vue versi 3.x, penghapusan atribut harus dinyatakan secara eksplisit dengan
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3">2.x, atribut yang dapat dienumerasi<br><small>seperti <code>contenteditable</code>, <code>draggable</code> dan <code>spellcheck</code>.</small></td>
-      <td><code>undefined</code>, <code>false</code></td>
+      <td rowspan="3">2.x “Enumerated attrs”<br><small>i.e. <code>contenteditable</code>, <code>draggable</code> and <code>spellcheck</code>.</small></td>
+      <td><code>undefined</code></td>
       <td><code>undefined</code>, <code>null</code></td>
       <td><i>dihapus</i></td>
     </tr>
@@ -120,7 +120,7 @@ Pada Vue versi 3.x, penghapusan atribut harus dinyatakan secara eksplisit dengan
       <td><code>"true"</code></td>
     </tr>
     <tr>
-      <td><code>null</code>, <code>'false'</code></td>
+      <td><code>null</code>, <code>false</code>, <code>'false'</code></td>
       <td><code>false</code>, <code>'false'</code></td>
       <td><code>"false"</code></td>
     </tr>
