@@ -1,18 +1,18 @@
 ---
-title: Props Default Function this Access
+title: Akses Props Fungsi Bawaan this
 badges:
   - breaking
 ---
 
-# Props Default Function `this` Access <MigrationBadges :badges="$frontmatter.badges" />
+# Akses Props Fungsi Bawaan `this` <MigrationBadges :badges="$frontmatter.badges" />
 
-Props default value factory functions no longer have access to `this`.
+Nilai bawaan props fungsi-fungsi factory tidak lagi memilki akses terhadap `this`.
 
-Instead:
+Melainkan:
 
-- Raw props received by the component are passed to the default function as argument;
+- Raw props didapatkan dari komponen yang dilewatkan menuju fungsi bawaan sebagai argumen;
 
-- The [inject](../composition-api-provide-inject.md) API can be used inside default functions.
+- [inject](../composition-api-provide-inject.md) API dapat digunakan di dalam fungsi-fungsi bawaan.
 
 ```js
 import { inject } from 'vue'
@@ -21,9 +21,9 @@ export default {
   props: {
     theme: {
       default (props) {
-        // `props` is the raw values passed to the component,
-        // before any type / default coercions
-        // can also use `inject` to access injected properties
+        // `props` merupakan nilai raw dilewatkan menuju komponen,
+        // sebelum dilakukan type / default coercions
+        // dapat juga menggunaan `inject` untuk mengakses properti yang diinjeksikan
         return inject('theme', 'default-theme')
       }
     }
@@ -31,6 +31,6 @@ export default {
 }
 ```
 
-## Migration Strategy
+## Stategi Migrasi
 
-[Migration build flag: `PROPS_DEFAULT_THIS`](migration-build.html#compat-configuration)
+[Flag build migrasi: `PROPS_DEFAULT_THIS`](migration-build.html#compat-configuration)
