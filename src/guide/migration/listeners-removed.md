@@ -1,14 +1,14 @@
 ---
-title: $listeners removed
+title: Penghapusan $listeners
 badges:
   - breaking
 ---
 
-# `$listeners` removed <MigrationBadges :badges="$frontmatter.badges" />
+# `$listeners` telah dihapus <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Gambaran Umum
 
-The `$listeners` object has been removed in Vue 3. Event listeners are now part of `$attrs`:
+Objek `$listeners` telah dihapuskan pada Vue 3. Event listeners sekarang bagian dari `$attrs`:
 
 ```js
 {
@@ -17,10 +17,10 @@ The `$listeners` object has been removed in Vue 3. Event listeners are now part 
 }
 ```
 
-## 2.x Syntax
+## 2.x Sintaksis
 
-In Vue 2, you can access attributes passed to your components with `this.$attrs`, and event listeners with `this.$listeners`.
-In combination with `inheritAttrs: false`, they allow the developer to apply these attributes and listeners to some other element instead of the root element:
+Pada Vue 2, Anda dapat mengakses atribut-atribut yang disuguhkan ke komponen-komponen Anda melalui `this.$attrs`, dan event listeners dengan `this.$listeners`.
+Pengkombinasian dengan `inheritAttrs: false`, mereka membolehkan para pengembang untuk mengaplikasikan atribut-atribut dan listener-listener ini ke semua elemen lain daripada ke elemen root:
 
 ```html
 <template>
@@ -35,9 +35,9 @@ In combination with `inheritAttrs: false`, they allow the developer to apply the
 </script>
 ```
 
-## 3.x Syntax
+## 3.x Sintaksis
 
-In Vue 3's virtual DOM, event listeners are now just attributes, prefixed with `on`, and as such are part of the `$attrs` object, so `$listeners` has been removed.
+Pada Vue 3's virtual DOM, event listeners sekarang hanyalah sebuah atribut, diawali dengan `on`, dan merupakan bagian dari objek `$attrs`, sehingga `$listeners` telah dihapuskan.
 
 ```vue
 <template>
@@ -52,7 +52,7 @@ export default {
 </script>
 ```
 
-If this component received an `id` attribute and a `v-on:close` listener, the `$attrs` object will now look like this:
+jika komponen ini mendapatkan sebuah atribut `id` dan sebuah listener `v-on:close`, objek `$attrs` sekarang akan tampak seperti ini:
 
 ```js
 {
@@ -61,16 +61,16 @@ If this component received an `id` attribute and a `v-on:close` listener, the `$
 }
 ```
 
-## Migration Strategy
+## Strategi Migrasi
 
-Remove all usages of `$listeners`.
+Hapus semua penggunaan dari `$listeners`.
 
-[Migration build flag: `INSTANCE_LISTENERS`](migration-build.html#compat-configuration)
+[Flag build Migrasi: `INSTANCE_LISTENERS`](migration-build.html#compat-configuration)
 
-## See also
+## Baca juga
 
 - [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
-- [Migration guide - `$attrs`includes `class` & `style` ](./attrs-includes-class-style.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
-- [Migration guide - New Emits Option](./emits-option.md)
-- [Migration guide - `.native` modifier removed](./v-on-native-modifier-removed.md)
+- [Panduan Migrasi - `$attrs` memuat `class` & `style` ](./attrs-includes-class-style.md)
+- [Panduan Migrasi - Perubahan pada Render Functions API](./render-function-api.md)
+- [Panduan Migrasi - Opsi baru Emits](./emits-option.md)
+- [Panduan Migrasi - Pengubah `.native` dihapuskan](./v-on-native-modifier-removed.md)

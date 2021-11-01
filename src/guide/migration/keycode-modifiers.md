@@ -3,28 +3,28 @@ badges:
   - breaking
 ---
 
-# KeyCode Modifiers <MigrationBadges :badges="$frontmatter.badges" />
+# Pengubah KeyCode <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Gambaran Umum
 
-Here is a quick summary of what has changed:
+Berikut adalah ringkasan singkat tentang apa yang telah berubah:
 
-- **BREAKING**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
-- **BREAKING**: `config.keyCodes` is no longer supported
+- **MERUSAK**: Pengunaan angka-angka, contoh. keyCodes, sebagai pengubah `v-on` tidak lagi didukung
+- **MERUSAK**: `config.keyCodes` tidak lagi didukung
 
-## 2.x Syntax
+## 2.x Sintaksis
 
-In Vue 2, `keyCodes` were supported as a way to modify a `v-on` method.
+Pada Vue 2, `keyCodes` didukung sebagai satu cara untuk mengubah suatu metode `v-on`.
 
 ```html
-<!-- keyCode version -->
+<!-- versi keyCode -->
 <input v-on:keyup.13="submit" />
 
-<!-- alias version -->
+<!-- versi alias -->
 <input v-on:keyup.enter="submit" />
 ```
 
-In addition, you could define your own aliases via the global `config.keyCodes` option.
+Tambahan, Anda dapat mendefinisikan alias Anda sendiri melalui opsi global `config.keyCodes`.
 
 ```js
 Vue.config.keyCodes = {
@@ -33,40 +33,40 @@ Vue.config.keyCodes = {
 ```
 
 ```html
-<!-- keyCode version -->
+<!-- versi keyCode -->
 <input v-on:keyup.112="showHelpText" />
 
-<!-- custom alias version -->
+<!-- versi alias kustom -->
 <input v-on:keyup.f1="showHelpText" />
 ```
 
-## 3.x Syntax
+## 3.x Sintaksis
 
-Since [`KeyboardEvent.keyCode` has been deprecated](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode), it no longer makes sense for Vue 3 to continue supporting this as well. As a result, it is now recommended to use the kebab-case name for any key you want to use as a modifier.
+Dikarenakan [`KeyboardEvent.keyCode` telah usang](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode), sangat tidak masuk akal jika Vue 3 tetap mendukung hal ini. Sebagai gantinya, direkomendasikan untuk penggunaan nama kebab-case untuk semua key yang Anda akan gunakan sebagai pengubah.
 
 ```html
-<!-- Vue 3 Key Modifier on v-on -->
+<!-- Pengubah Vue 3 Key pada v-on -->
 <input v-on:keyup.page-down="nextPage">
 
-<!-- Matches both q and Q -->
+<!-- kedua q dan Q cocok -->
 <input v-on:keypress.q="quit">
 ```
 
-As a result, this means that `config.keyCodes` is now also deprecated and will no longer be supported.
+Hasilnya, hal ini berarti bahwa `config.keyCodes` juga telah usang dan tidak lagi didukung.
 
-## Migration Strategy
+## Strategi dalam Migrasi
 
-For those using `keyCode` in their codebase, we recommend converting them to their kebab-cased named equivalents.
+Untuk semua yang memakai `keyCode` pada codebase kalian, kami merekomendasikan pengubahaan `keyCode` menjadi penamaan kebab-cased yang setara.
 
-The keys for some punctuation marks can just be included literally. e.g. For the `,` key:
+keys sebagai tanda baca dapat dituliskan secara literal. contoh. untuk key `,`:
 
 ```html
 <input v-on:keypress.,="commaPress">
 ```
 
-Limitations of the syntax prevent certain characters from being matched, such as `"`, `'`, `/`, `=`, `>`, and `.`. For those characters you should check `event.key` inside the listener instead.
+Limitasi dari sintaksis mencegah beberapa karakter untuk dicocokan, seperti `"`, `'`, `/`, `=`, `>`, dan `.`. Sebagai gantinya, untuk karakter-karakter tersebut Anda dapat cek `event.key` di dalam listener.
 
-[Migration build flags:](migration-build.html#compat-configuration)
+[Flag build migrasi:](migration-build.html#compat-configuration)
 
 - `CONFIG_KEY_CODES`
 - `V_ON_KEYCODE_MODIFIER`
